@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CreateController;
+use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\DeleteController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::view('/createbug','createBug');
-Route::view('/updatebug','updateBug');
-Route::view('/deletebug','deleteBug');
-
-Route::view('/viewbugs','viewBugs');
+Route::get('/', [HomeController::class,'index']);
+Route::get('/createbug', [CreateController::class,'index']);
+Route::get('/updatebug', [UpdateController::class,'index']);
+Route::get('/deletebug', [DeleteController::class,'index']);
+Route::get('/viewbugs', [ViewController::class,'index']);
 
