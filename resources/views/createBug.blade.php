@@ -3,5 +3,11 @@
 @section('title','Create Bugs')
 
 @section('content')
-    <h1>This is a view bug</h1>
+    @foreach ($create as $data)
+        Judul : {{$data['judul']}}<br>
+        Detail : {{$data['detail']}}<br>
+        Versi : {{$data['versi']}}<br>
+        Level : {{$data['level']}}<br>
+        <br>
+    @endforeach
 @endsection
