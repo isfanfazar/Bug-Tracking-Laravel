@@ -19,4 +19,11 @@ class ViewController extends Controller
         ];
         return view('viewBugs', $data);
     }
+
+    public function detail($id){
+        $data = [
+            'view' => $this->ViewBugModel->detailData($id),
+        ];
+        return view('detail', $data); 
+    }
 }

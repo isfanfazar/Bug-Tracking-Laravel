@@ -23,6 +23,7 @@ Route::get('/createbug', [CreateController::class,'index']);
 Route::get('/updatebug', [UpdateController::class,'index']);
 Route::get('/deletebug', [DeleteController::class,'index']);
 Route::get('/viewbugs', [ViewController::class,'index']);
+Route::get('/viewbugs/detail/{id}', [ViewController::class,'detail']);
 
 
 /*

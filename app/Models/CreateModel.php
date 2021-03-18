@@ -12,13 +12,4 @@ class CreateModel extends Model
    {
       return DB::table('tbl_view')->get();
    }
-
-   public function allData()
-   {
-      return DB::table('tbl_view')->get();
-   }
-   public function allData()
-   {
-      return DB::table('tbl_view')->get();
-   }
 }
