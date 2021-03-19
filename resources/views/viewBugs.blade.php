@@ -4,6 +4,15 @@
 
 
 @section('content')
+<a href="/viewbugs/add" class="btn btn-primary btn-sm">add</a>
+
+@if (session('message'))
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa-check"></i>Success!!</h4>
+            {{ (session('message')) }}
+        </div>
+    @endif
 
     <table class="table table-bordered">
         <thead>

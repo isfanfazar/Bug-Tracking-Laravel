@@ -8,8 +8,5 @@ use Illuminate\Support\Facades\DB;
 
 class CreateModel extends Model
 {
-   public function allData()
-   {
-      return DB::table('tbl_view')->get();
-   }
+
 }

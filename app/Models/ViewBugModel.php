@@ -18,5 +18,8 @@ class ViewBugModel extends Model
       return DB::table('tbl_view')->where('id', $id)->first();
    }
    
-   
+   public function addData($data)
+   {
+      DB::table('tbl_view')->insert($data);
+   }
 }
