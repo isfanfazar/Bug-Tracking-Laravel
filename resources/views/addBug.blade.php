@@ -4,7 +4,7 @@
 
 @section('content')
     
-   <form action="/viewbugs/insert" method="POST" enctype="multipart/form-data">
+   <form action="/createbug/insert" method="POST" enctype="multipart/form-data">
     @csrf
 
         <div class="content">
