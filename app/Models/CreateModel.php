@@ -8,5 +8,23 @@ use Illuminate\Support\Facades\DB;
 
 class CreateModel extends Model
 {
+    public function allData()
+    {
+       return DB::table('tbl_view')->get();
+    }
+    
+    public function detailData($id)
+    {
+       return DB::table('tbl_view')->where('id', $id)->first();
+    }
 
+    public function addData($data)
+    {
+       DB::table('tbl_view')->insert($data);
+    }
+ 
+    public function editData($id, $data)
+    {
+       DB::table('tbl_view')->where('id', $id)->update($data);
+    }
 }

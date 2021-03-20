@@ -36,8 +36,8 @@
                     <td>{{ $data->versi }}</td>
                     <td>{{ $data->status }}</td>
                     <td>
-                        <a href="/viewbugs/detail/{{$data->id}}" class="btn btn-success">Detail</a>
-                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="/createbug/detail/{{$data->id}}" class="btn btn-success">Detail</a>
+                        <a href="/createbug/edit/{{$data->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
             @endforeach

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ViewBugModel;
+use App\Models\CreateModel;
 
 
 class CreateController extends Controller
@@ -11,20 +11,20 @@ class CreateController extends Controller
 {
     public function __construct()
     {
-        $this->ViewBugModel = new ViewBugModel();
+        $this->CreateModel = new CreateModel();
     }
 
     public function index()
     {
         $data = [
-            'view' => $this->ViewBugModel->allData(),
+            'view' => $this->CreateModel->allData(),
         ];
         return view('createbug', $data);
     }
 
     public function detail($id){
         $data = [
-            'view' => $this->ViewBugModel->detailData($id),
+            'view' => $this->CreateModel->detailData($id),
         ];
         return view('detail', $data); 
     }
@@ -57,7 +57,56 @@ class CreateController extends Controller
             'status' => Request()->status,
         ];
 
-        $this->ViewBugModel->addData($data);
+        $this->CreateModel->addData($data);
         return redirect()->route('createbug')->with('message','Success to add bug');
+    }
+
+    public function edit($id){
+        if(!$this->CreateModel->detailData($id)){
+            abort(404);
+        }
+        
+        $data = [
+            'view' => $this->CreateModel->detailData($id),
+        ];
+
+        return view('editBug', $data);
+    }
+
+    public function update($id){
+        Request()->validate([
+            'judul' => 'required|min:10|max:100',
+            'foto' => 'mimes:jpg,jpeg,bmp,png',
+            'detail' => 'required',
+            'versi' => 'required',
+            'status' => 'required',
+        ]);
+
+        if(Request()->foto <> ""){
+            //upload foto or update foto
+            $file = Request()->foto;
+            $fileName = Request()->judul . '.' . $file->extension();
+            $file->move(public_path('foto'), $fileName);
+
+            $data = [
+                'judul' => Request()->judul,
+                'foto' => $fileName,
+                'detail' => Request()->detail,
+                'versi' => Request()->versi,
+                'status' => Request()->status,
+            ];
+
+            $this->CreateModel->editData($id, $data);            
+        } else{
+            //if you dont want to change the foto
+            $data = [
+                'judul' => Request()->judul,
+                'detail' => Request()->detail,
+                'versi' => Request()->versi,
+                'status' => Request()->status,
+            ];
+            $this->CreateModel->editData($id, $data);  
+        }
+            return redirect()->route('createbug')->with('message','Success to update bug');
     }
 }

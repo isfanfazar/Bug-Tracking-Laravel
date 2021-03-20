@@ -4,7 +4,7 @@
 
 @section('content')
     <table class="table">
-        <a href="/viewbugs" class="btn btn-primary">Back</a>
+        <a href="/createbug" class="btn btn-primary">Back</a>
         <tr>
                 <th>No</th>
                 <th>:</th>

@@ -22,12 +22,14 @@ Route::get('/', [HomeController::class,'index']);
 Route::get('/createbug', [CreateController::class,'index'])->name('createbug');
 Route::get('/createbug/add',[CreateController::class,'add']);
 Route::post('/createbug/insert',[CreateController::class,'insert']);
+Route::get('/createbug/detail/{id}', [CreateController::class,'detail']);
+Route::get('/createbug/edit/{id}',[CreateController::class,'edit']);
+Route::post('/createbug/update/{id}',[CreateController::class,'update']);
 
 Route::get('/updatebug', [UpdateController::class,'index']);
 Route::get('/deletebug', [DeleteController::class,'index']);
 
 Route::get('/viewbugs', [ViewController::class,'index']);
-Route::get('/viewbugs/detail/{id}', [ViewController::class,'detail']);
 Route::get('/viewbugs/add',[ViewController::class,'add']);
 Route::post('/viewbugs/insert',[ViewController::class,'insert']);
 
