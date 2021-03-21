@@ -107,6 +107,17 @@ class CreateController extends Controller
             ];
             $this->CreateModel->editData($id, $data);  
         }
-            return redirect()->route('createbug')->with('message','Success to update bug');
+            return redirect()->route('createbug')->with('message','bug has been update');
+    }
+
+    public function delete($id){
+
+        $view = $this->CreateModel->detailData($id);
+        if($view->foto <> ""){
+            unlink(public_path('foto') . '/' . $view->foto);
+        }
+
+        $this->CreateModel->deleteData($id);
+        return redirect()->route('createbug')->with('message','bug has been delete');
     }
 }

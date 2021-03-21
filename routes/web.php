@@ -25,9 +25,9 @@ Route::post('/createbug/insert',[CreateController::class,'insert']);
 Route::get('/createbug/detail/{id}', [CreateController::class,'detail']);
 Route::get('/createbug/edit/{id}',[CreateController::class,'edit']);
 Route::post('/createbug/update/{id}',[CreateController::class,'update']);
+Route::get('/createbug/delete/{id}',[CreateController::class,'delete']);
 
 Route::get('/updatebug', [UpdateController::class,'index']);
-Route::get('/deletebug', [DeleteController::class,'index']);
 
 Route::get('/viewbugs', [ViewController::class,'index']);
 Route::get('/viewbugs/add',[ViewController::class,'add']);

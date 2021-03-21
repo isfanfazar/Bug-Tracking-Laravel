@@ -38,11 +38,39 @@
                     <td>{{ $data->versi }}</td>
                     <td>{{ $data->status }}</td>
                     <td>
-                        <a href="/createbug/detail/{{$data->id}}" class="btn btn-success">Detail</a>
-                        <a href="/createbug/edit/{{$data->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/createbug/detail/{{$data->id}}" class="btn btn-success btn-sm">Detail</a>
+                        <a href="/createbug/edit/{{$data->id}}" class="btn btn-warning btn-sm">Edit</a>
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete{{$data->id}}">
+                            Delete
+                        </button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+    @foreach($view as $data)
+    <div class="modal fade" id="delete{{$data->id}}">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content bg-danger">
+            <div class="modal-header">
+              <h4 class="modal-title">{{$data->judul}}</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are You sure want to delete?&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">No</button>
+              <a href="/createbug/delete/{{$data->id}}" class="btn btn-outline-light">Delete</a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      @endforeach
+
 @endsection
