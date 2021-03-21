@@ -3,7 +3,9 @@
 @section('title','Create Bugs')
 
 @section('content')
-<a href="/createbug/add" class="btn btn-primary btn-sm">add</a>
+<a href="/createbug/add" class="btn btn-primary btn-lg">add</a>
+<br>
+<br>
 
     @if (session('message'))
         <div class="alert alert-success alert-dismissible">

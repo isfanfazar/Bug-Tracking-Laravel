@@ -26,27 +26,15 @@
                   <p>Create Bugs</p>
                 </a>
               </li>
+            </ul>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/updatebug" class="nav-link">
+                <a href="/viewbugs" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Update Bugs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/deletebug" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Delete Bugs</p>
+                  <p>View Bugs</p>
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/viewbugs" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                View Bugs
-              </p>
-            </a>
           </li>
           <li class="nav-header">MULTI LEVEL EXAMPLE</li>
           <li class="nav-item has-treeview">
