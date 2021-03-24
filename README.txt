@@ -1,1 +1,1 @@
-This is a Bug Tracking System
+This is a Bug Tracking System, one of my project for my portfolio.
