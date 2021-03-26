@@ -27,14 +27,4 @@ class CreateModel extends Model
     {
        DB::table('tbl_view')->where('id', $id)->update($data);
     }
-
-    public function deleteData($id)
-    {
-       DB::table('tbl_view')->where('id', $id)->delete();
-    }
-
-    public function deleteData($id)
-    {
-       DB::table('tbl_view')->where('id', $id)->delete();
-    }
 }

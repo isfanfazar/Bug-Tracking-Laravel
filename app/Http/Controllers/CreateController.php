@@ -120,7 +120,5 @@ class CreateController extends Controller
         $this->CreateModel->deleteData($id);
         return redirect()->route('createbug')->with('message','bug has been delete');
 
-        $this->CreateModel->deleteData($id);
-        return redirect()->route('createbug')->with('message','bug has been delete');
     }
 }
