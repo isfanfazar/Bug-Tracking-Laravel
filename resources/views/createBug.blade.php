@@ -3,7 +3,7 @@
 @section('title','Create Bugs')
 
 @section('content')
-<a href="/createbug/add" class="btn btn-primary btn-lg">add</a>
+<a href="/createbug/add" class="btn btn-primary btn-lg">Add</a>
 <br>
 <br>
 
@@ -19,10 +19,10 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Judul</th>
-                <th>Foto</th>
+                <th>Title</th>
+                <th>Image</th>
                 <th>Detail</th>
-                <th>Versi</th>
+                <th>Version</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
