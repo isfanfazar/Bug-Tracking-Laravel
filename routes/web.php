@@ -5,6 +5,7 @@ use App\Http\Controllers\CreateController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\DeveloperController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,8 @@ Route::get('/updatebug', [UpdateController::class,'index']);
 Route::get('/viewbugs', [ViewController::class,'index']);
 Route::get('/viewbugs/add',[ViewController::class,'add']);
 Route::post('/viewbugs/insert',[ViewController::class,'insert']);
+
+Route::get('/developer', [DeveloperController::class,'index']);
 
 
 
