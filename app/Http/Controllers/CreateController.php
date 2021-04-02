@@ -12,6 +12,7 @@ class CreateController extends Controller
     public function __construct()
     {
         $this->CreateModel = new CreateModel();
+        $this->middleware('auth');
     }
 
     public function index()

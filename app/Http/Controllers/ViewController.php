@@ -10,6 +10,7 @@ class ViewController extends Controller
     public function __construct()
     {
         $this->ViewBugModel = new ViewBugModel();
+        $this->middleware('auth');
     }
 
     public function index()
