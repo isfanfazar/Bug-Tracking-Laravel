@@ -38,6 +38,7 @@ Route::get('/developer', [DeveloperController::class,'index']);
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
