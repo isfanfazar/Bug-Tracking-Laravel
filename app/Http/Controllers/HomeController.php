@@ -26,9 +26,4 @@ class HomeController extends Controller
         return view('v_home');
     }
 
-    public function indexes()
-    {
-        return view('v_home');
-    }
-
 }
